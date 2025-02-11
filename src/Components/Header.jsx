@@ -22,6 +22,8 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 const products = [
   { name: 'AC repair technician', description: 'Services and repairs air conditioning units', href: '#', icon: ChartPieIcon },
@@ -45,9 +47,9 @@ export default function Header() {
           <a href="#" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
-              alt=""
-              src="https://st5.depositphotos.com/13646662/67368/v/450/depositphotos_673684240-stock-illustration-home-service-construction-logo-vector.jpg"
-              className="h-12 w-auto"
+              alt="" 
+              src={logo}
+              className="h-16 w-auto" 
             />
           </a>
         </div>
@@ -117,9 +119,9 @@ export default function Header() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold text-gray-300">
+          <Link to="/login" className="text-sm font-semibold text-gray-300">
             Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          </Link>
         </div>
       </nav>
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
@@ -184,17 +186,17 @@ export default function Header() {
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-gray-300 hover:bg-gray-700"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </DialogPanel>
       </Dialog>
     </header>
-  )
+  );
 }
